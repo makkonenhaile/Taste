@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+    {% for review in reviews %}
+        <a href="#">
+            <h2>{{ usernames[loop.index - 1] }}</h2>
+            <h2>{{ review['mediaID'] }}</h2>
+            {% if review['yum'] == 1%}
+                <h3>yum</h3>
+            {%else%}
+                <h3>yuck</h3>
+            {% endif %}
+            <h3>{{ review['date'] }}</h3>
+            <h3>{{ review['mediaType'] }}</h3>
+            <h3>{{ review['reviewTitle'] }}</h3>
+        </a>
+        <span class="badge badge-primary">{{ review['reviewText'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
