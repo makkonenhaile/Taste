@@ -1,0 +1,195 @@
+
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;}
+
+p, a, h2, h3, h4, h5
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+*:before,
+*:after{
+    padding: 0;
+    margin: 2%;
+    box-sizing: border-box;
+}
+body{
+    background-color: #080710;
+}
+
+
+form{
+    height: 50px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    /*border: 2px solid rgba(255,255,255,0.1);*/
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+form h5{
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 5px;
+    text-align: center;
+}
+
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 95%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+
+.social div{
+  background: red;
+  width: 300px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 100px;
+}
+.social .i{
+  margin-right: 4px;
+}
+*/
+
+
+.taste_picture {
+    display: block;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+/*
+.profilepic{
+    border:#e5e5e5;
+    border-radius: 50%;
+    margin-left: 5%;
+    width: 10%;
+    height: auto;
+}
+*/
+
+.profile_pic {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 5%;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+    left: 30px;
+    top: -50px;
+}
+
+.profile_pic img{
+    width: 100%;
+}
+
+.header > h2,
+.header > img {
+    display: inline-block;
+}
+
+.picinline {
+    width: 33.33%;
+    float: left;
+    height: 100%;
+    z-index: 1;
+}
+.row{
+    padding-top: 0%;
+    opacity: 50%;
+}
+
+.username {
+    top: -500px;
+    margin-left: 23%;
+    width: 100%;
+    color: #EAEAEA;
+    padding: 15px 0;
+    font-size: 30px;
+    font-weight: 600;
+    /*cursor: pointer;*/
+}
