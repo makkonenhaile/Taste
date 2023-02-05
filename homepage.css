@@ -25,6 +25,10 @@ p, a, h2, h3, h4, h5{
 body{
     background-color: #191919;
 }
+#navbar__logo{
+    list-style-type:none;
+    padding-top: 10px;;
+}
 .fade-in {
     opacity: 0;
     transition: opacity 950ms ease-in;
@@ -80,7 +84,7 @@ body{
   }
   
   .navbar__menu {
-    margin-top: 35px;
+    /* margin-top: 35px; */
     display    : flex;
     align-items: center;
     list-style : none;
@@ -174,6 +178,7 @@ body{
   
     #navbar__logo {
         padding-left: 25px;
+        list-style-type:none;
     }
   
     .navbar__toggle .bar {

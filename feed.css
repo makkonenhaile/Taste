@@ -1,0 +1,116 @@
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+p, a, h2, h3, h4, h5{
+    font-family: 'Poppins', sans-serif;
+    color:#eaeaea;
+}
+
+body{
+    background-color: black;
+    
+}
+time{
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+    font-size: 12px;
+}
+
+.all-blocks{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.in-article-card{
+    border-radius: 5px;
+    border: 0.5px solid #a29898;
+    box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 20%);
+    padding: 0.75rem 1.25rem;
+    background-color: #191919;
+    display: block;
+    height: 270px;
+}
+.in-article-card:hover{
+    border: 0.5px solid #d51111; 
+}
+.block-title{
+    font-size: 30px;
+    float:right;
+}
+.opinion-para{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.profile-pic{
+    float:left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.child {
+    display: inline-block;
+    
+}
+.tag{
+
+}
+.user-name{
+    padding-top: 10px;
+    padding-left:20px;
+    font-size: 20px;
+}
+.yum-yuck{
+    float:right;
+    /* margin-left: 100px; */
+}
+.pad-120{
+    padding-left:120px;
+}
+.write-block{
+    border-radius: 5px;
+    border: 0.5px solid #a29898;
+    box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 20%);
+    padding: 0.75rem 1.25rem;
+    background-color: #191919;
+    display: block;
+    height: 150px;
+    width: 77.2%;
+    position: absolute;
+    top:150px;
+}
+.write-block:hover{
+    border: 0.5px solid #ffffff;
+}
+.mind{
+    color:grey;
+}
+.topimg{
+    width: 100%;
+    position: relative;
+}
+
+.paddingtop{
+    padding-top:100px;
+}
