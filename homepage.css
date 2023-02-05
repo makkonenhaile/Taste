@@ -14,7 +14,9 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 p, a, h2, h3, h4, h5{
     font-family: 'Poppins', sans-serif;
@@ -251,7 +253,7 @@ body{
 }
   .title{
     color: rgb(255, 255, 255) !important;
-    font-size: 40px;
+    font-size: 36px;
     text-align: left;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
@@ -263,7 +265,7 @@ body{
   }
   @media screen and (max-width: 1113px){
     .title{
-        font-size: 60px;
+        font-size: 30px;
         padding-top: 2%;
     }
     
@@ -271,7 +273,7 @@ body{
   @media screen and (max-width: 935px){
     .title{
         text-align: center;
-        font-size: 60px;
+        font-size: 24px;
     }
     
   
@@ -279,7 +281,7 @@ body{
   @media screen and (max-width: 666px){
     .title{
         text-align: center;
-        font-size: 50px;
+        font-size: 20px;
     }
     
   }
