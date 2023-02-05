@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/homepage.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/taste tounge.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Taste</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar__container">
+          <li id = "navbar__logo" class = "tastelogo">
+            <img class = "tastelogo" src="{{ url_for('static', filename='images/neoud taste.png') }}">
+          </li>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+
+                <li class="navbar__btn">
+                    <a href="{{url_for('signup')}}" class="button" >Signup</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="{{url_for('login')}}" class="button" >Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class = "row">
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/moviecollage2.jpeg') }}"></div>
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/famousartcollage.jpeg') }}"></div>
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/foodcollage.jpeg') }}"></div>
+    </div>
+
+
+    <h1 class="main-title">
+        <h2 class="title1">Share your taste about...</h2>
+        <a href="" class="typewrite title" data-period="2000" data-type='[ "Movies", "TV Shows", "Art", "Music", "That one restaurant" ]'>
+        <span class="wrap"></span>
+      </a>
+    </h1>
+
+
+
+
+
+      <script type="text/javascript" src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+</body>
+</html>

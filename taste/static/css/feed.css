@@ -1,0 +1,277 @@
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+p, a, h2, h3, h4, h5, input, textarea{
+    font-family: 'Poppins', sans-serif;
+    color:#eaeaea;
+}
+
+body{
+    background-color: black;
+    
+}
+time{
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+    font-size: 12px;
+}
+
+.all-blocks{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 1rem;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.in-article-card{
+    border-radius: 5px;
+    border: 0.5px solid #a29898;
+    box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 20%);
+    padding: 0.75rem 1.25rem;
+    background-color: #191919;
+    display: block;
+    height: 270px;
+}
+.in-article-card:hover{
+    border: 0.5px solid #d51111; 
+}
+.block-title{
+    font-size: 30px;
+    float:right;
+}
+.opinion-para{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.profile-pic{
+    float:left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.child {
+    display: inline-block;
+    
+}
+.user-name{
+    padding-top: 10px;
+    padding-left:20px;
+    font-size: 20px;
+}
+.yum-yuck{
+    float:right;
+    /* margin-left: 100px; */
+}
+.pad-120{
+    padding-left:120px;
+}
+.write-block{
+    border-radius: 5px;
+    border: 0.5px solid #a29898;
+    box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 20%);
+    padding: 0.75rem 1.25rem;
+    background-color: #191919;
+    display: block;
+    height: 150px;
+    width: 77.2%;
+    position: absolute;
+    top:150px;
+}
+.write-block:hover{
+    border: 0.5px solid #ffffff;
+} 
+.mind{
+    background-color: #191919;
+    border-radius: 0;
+    border:0;
+    width:100%;
+    text-decoration: none;
+    height: 160px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    font-size: 16px;
+    font-style: normal;
+    resize: none;
+    outline:none;
+}
+
+.topimg{
+    width: 100%;
+    position: relative;
+    /* z-index: 999; */
+}
+
+.paddingtop{
+    padding-top:100px;
+}
+
+
+
+
+
+
+
+/* Revealing 3D Menu CSS */
+
+
+/* main page */
+article
+{
+	
+	-webkit-transform-origin: 0 50%;
+	-moz-transform-origin: 0 50%;
+	-ms-transform-origin: 0 50%;
+	-o-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+}
+
+article:after
+{
+	/* position: absolute; */
+	content: ' ';
+	left: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+}
+
+nav
+{
+	position: fixed;
+	left: -16em;
+	top: 0;
+	bottom: 0;
+	background-color: #191919;
+	border-right: 50px solid #191919;
+	box-shadow: 4px 0 5px rgba(0,0,0,0.2);
+	z-index: 1;
+	cursor: pointer;
+    border-radius: 2px;
+    /* border-color: #eaeaea; */
+}
+
+nav:after
+{
+	position: absolute;
+	content: ' ';
+	width: 0;
+	height: 0;
+	right: -70px;
+	top: 50%;
+	border-width: 15px 10px;
+	border-style: solid;
+	border-color: transparent transparent transparent #191919;
+}
+
+nav ul
+{
+	width: 14em;
+	list-style-type: none;
+	margin: 0;
+	padding: 1em;
+}
+
+nav a:link, nav a:visited
+{
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	line-height: 2.5em;
+    font-size: 24px;
+	text-indent: 10px;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 4px;
+	outline: 0 none;
+}
+
+nav a:hover, nav a:focus
+{
+	color: #fff;
+	background-color: darken(#191919, 20%);
+	text-shadow: 0 0 4px #fff;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,0.2);
+}
+
+/* hovering */
+article, article:after, nav, nav *
+{
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+
+nav:hover
+{
+	left: 0;
+}
+
+nav:hover ~ article
+{
+	-webkit-transform: translateX(16em) perspective(600px) rotateY(10deg);
+	-moz-transform: translateX(16em) perspective(600px) rotateY(10deg);
+	-ms-transform: translateX(16em) perspective(600px) rotateY(10deg);
+	-o-transform: translateX(16em) perspective(600px) rotateY(10deg);
+	transform: translateX(16em) perspective(600px) rotateY(10deg);
+}
+
+nav:hover ~ article:after
+{
+	left: 60%;
+}
+
+/* typography */
+footer
+{
+	margin-top: 2em;
+	border-top: 1px dotted #999;
+}
+
+
+
+.logonav{
+    width:220px;
+}
+
+.lead {
+  font-weight:100;
+  font-size:21px;
+}
+
+picture {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.toplogo{
+    position: fixed;
+    width: 100px;
+    /* margin-top: 200px; */
+    left:47%;
+    z-index: 1000;
+    top:0;
+}

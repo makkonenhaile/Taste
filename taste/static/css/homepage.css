@@ -1,0 +1,297 @@
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+p, a, h2, h3, h4, h5{
+    font-family: 'Poppins', sans-serif;
+    }
+
+body{
+    background-color: #191919;
+}
+#navbar__logo{
+    list-style-type:none;
+    padding-top: 10px;;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 950ms ease-in;
+  }
+.fade-in.appear {
+    opacity: 1;
+}
+.tastelogo{
+    width: 260px;
+}
+
+.picinline {
+    width: 33.33%;
+    float: left;
+    height: 120%;
+}
+.row{
+    padding-top: 5%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .navbar {
+    /* height         : 80px; */
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    font-size      : 1.2rem;
+    /* position       : sticky; */
+    top            : 0;
+    z-index        : 999;
+  }
+  
+  .navbar__container {
+    /* position: sticky; */
+    display        : flex;
+    justify-content: space-between;
+    height         : 80px;
+    z-index        : 1;
+    width          : 100%;
+    max-width      : 1300px;
+    margin         : 0 auto;
+    /* padding        : 0 50px; */
+  }
+  
+
+  
+  .vestalogo{
+    width: 150px;
+  }
+  
+  .navbar__menu {
+    /* margin-top: 35px; */
+    display    : flex;
+    align-items: center;
+    list-style : none;
+  }
+  
+  .navbar__item {
+    height: 80px;
+  }
+  
+  .navbar__links {
+    color          : #fff;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    width          : 125px;
+    text-decoration: none;
+    height         : 100%;
+    transition     : all 0.3s ease;
+  }
+  
+  .navbar__btn {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : 0 1rem;
+    width          : 100%;
+  }
+  
+  .button {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    text-decoration: none;
+    padding        : 10px 20px;
+    height         : 100%;
+    width          : 100%;
+    border         : none;
+    outline        : none;
+    border-radius  : 4px;
+    /* background     : #833ab4; */
+    /* background     : -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background     : linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); */
+    color          : #fff;
+    transition     : all 0.3s ease;
+  
+  }
+  
+  .navbar__links:hover {
+    color     : black;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  .button:hover{
+    color: black;
+    background: white;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .navbar__container {
+        display        : flex;
+        justify-content: space-between;
+        height         : 80px;
+        z-index        : 1;
+        width          : 100%;
+        max-width      : 1300px;
+        padding        : 0;
+    }
+  
+    .navbar__menu {
+        display              : grid;
+        grid-template-columns: auto;
+        margin               : 0;
+        width                : 97%;
+        position             : absolute;
+        top                  : -1000px;
+        opacity              : 1;
+        transition           : all 0.5s ease;
+        z-index              : -1;
+    }
+    
+  
+    .navbar__menu.active {
+        background: #131313;
+        top       : 100%;
+        opacity   : 1;
+        transform : all 0.5s ease;
+        z-index   : 99;
+        height    : 60vh;
+        font-size : 1.6rem;
+    }
+  
+    #navbar__logo {
+        padding-left: 25px;
+        list-style-type:none;
+    }
+  
+    .navbar__toggle .bar {
+        width     : 25px;
+        height    : 3px;
+        margin    : 5px auto;
+        transition: all .3s ease-in-out;
+        background: #fff;
+    }
+  
+    .navbar__item {
+        width: 100%;
+    }
+  
+    .navbar__links {
+        text-align: center;
+        padding   : 2rem;
+        width     : 100%;
+        display   : table;
+    }
+  
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+  
+    .button {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        width          : 80%;
+        height         : 80px;
+        margin         : 0;
+    }
+  
+    #mobile-menu {
+        position : absolute;
+        top      : 20%;
+        right    : 5%;
+        transform: translate(5%, 20%);
+    }
+  
+    .navbar__toggle .bar {
+        display: block;
+        cursor : pointer;
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+  
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+  
+  }
+  
+  @media screen and (max-width: 523px) {
+    .navbar__menu{
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 313) {
+    .navbar__menu{
+      width: 92%;
+    }
+  }
+.title1{
+    font-size:60px;
+    color:#fff;
+    padding-left:20px;
+
+}
+  .title{
+    color: rgb(255, 255, 255) !important;
+    font-size: 36px;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    padding-left:20px;
+
+  }
+  .main-title{
+    padding-top: 2%;
+  }
+  @media screen and (max-width: 1113px){
+    .title{
+        font-size: 30px;
+        padding-top: 2%;
+    }
+    
+  }
+  @media screen and (max-width: 935px){
+    .title{
+        text-align: center;
+        font-size: 24px;
+    }
+    
+  
+  }
+  @media screen and (max-width: 666px){
+    .title{
+        text-align: center;
+        font-size: 20px;
+    }
+    
+  }
+  
+
+
+
+  

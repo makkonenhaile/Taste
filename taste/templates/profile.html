@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Taste</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/taste tounge.png') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/profile.css') }}">
+
+   
+</head>
+<body>
+    <nav>
+        <ul>
+            <img class= "logonav" src= "{{ url_for('static', filename='images/neoud taste.png') }}">
+            <li><a href="{{url_for('trueprofile')}}">Profile</a></li>
+            <li><a href="{{url_for('truefeed')}}">Feed</a></li>
+          
+        </ul>
+    </nav>
+    <body style="background-color:#191919;">
+    <div class = "row">
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/moviecollage2.jpeg') }}"></div>
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/famousartcollage.jpeg') }}"></div>
+        <div class = "column"><img class = "picinline" src ="{{ url_for('static', filename='images/foodcollage.jpeg') }}"></div>
+    </div>
+    
+    
+    <img class="taste_picture" src="{{ url_for('static', filename='images/neoud taste.png') }}" alt="Taste Logo">
+   
+
+    <div class = "in-line">
+        <img class="profile_pic " src="{{ url_for('static', filename='images/johnny3.webp') }}" alt="Avatar">
+            <div>
+                <h2 class="username">@dante-fart</h2>    
+                <p class = "bio">this is the bio of dante-fart. I looooove to fart. big ol farts, fart fart fart</p>
+                <div class="buttons-container">
+                    <button class="button-arounder">Follow</button>
+                  </div>
+            </div>
+           
+    </div>
+
+
+    <div class = "all-blocks">
+        {% block content %} {% endblock %}
+
+        <!--
+            <article class = "in-article-card ">
+                <div class= "grid-container">
+                    <img class="profile-pic child" src="images/johnny3.webp">
+                    <p class="user-name child"><strong>@dante-fart</strong></p>
+                    <h3 class = "block-title child">
+                    <strong>Inception is a peice of shit movie. </strong> 
+                    </h3>
+                    <p class="tag pad-120">#movies</p>
+                    <p class="yuck-yum pad-120">Yuck 🤮</p>
+                </div>
+                <hr>
+                <p class = "opinion-para"> 
+                    "Inception" has been widely praised for its technical prowess and thought-provoking storyline, however, it may not be for everyone. Here is a potential negative review:
+                    While the visual effects in "Inception" are certainly impressive, the film's convoluted and confusing storyline can leave audiences feeling bewildered and unsatisfied. The film's multiple layers of dream sequences and overlapping plotlines can be difficult to follow, causing some viewers to lose interest.
+                </p>
+                <time datetime = "2019-10-03" title ="Originally published Apr 8, 2013">
+                    1:40pm, 02-10-2022
+                </time>
+            </article>
+            <br><br><br>
+    
+        <article class = "in-article-card ">
+            <div class= "grid-container">
+                <img class="profile-pic child" src="images/johnny3.webp">
+                <p class="user-name child"><strong>@dante-fart</strong></p>
+                <h3 class = "block-title child">
+                <strong>Inception is a peice of shit movie. </strong> 
+                </h3>
+                <p class="tag pad-120">#movies</p>
+                <p class="yuck-yum pad-120">Yuck 🤮</p>
+            </div>
+            <hr>
+            <p class = "opinion-para"> 
+                "Inception" has been widely praised for its technical prowess and thought-provoking storyline, however, it may not be for everyone. Here is a potential negative review:
+                While the visual effects in "Inception" are certainly impressive, the film's convoluted and confusing storyline can leave audiences feeling bewildered and unsatisfied. The film's multiple layers of dream sequences and overlapping plotlines can be difficult to follow, causing some viewers to lose interest.
+            </p>
+            <time datetime = "2019-10-03" title ="Originally published Apr 8, 2013">
+                1:40pm, 02-10-2022
+            </time>
+        </article>
+        <br><br><br>
+        <article class = "in-article-card ">
+            <div class= "grid-container">
+                <img class="profile-pic child" src="images/johnny3.webp">
+                <p class="user-name child"><strong>@dante-fart</strong></p>
+                <h3 class = "block-title child">
+                <strong>Inception is a peice of shit movie. </strong> 
+                </h3>
+                <p class="tag pad-120">#movies</p>
+                <p class="yuck-yum pad-120">Yuck 🤮</p>
+            </div>
+            <hr>
+            <p class = "opinion-para"> 
+                "Inception" has been widely praised for its technical prowess and thought-provoking storyline, however, it may not be for everyone. Here is a potential negative review:
+                While the visual effects in "Inception" are certainly impressive, the film's convoluted and confusing storyline can leave audiences feeling bewildered and unsatisfied. The film's multiple layers of dream sequences and overlapping plotlines can be difficult to follow, causing some viewers to lose interest.
+            </p>
+            <time datetime = "2019-10-03" title ="Originally published Apr 8, 2013">
+                1:40pm, 02-10-2022
+            </time>
+        </article>
+    -->
+    </div>      
+    
+
+<br><br><br>
+    
+</body>
+</html>

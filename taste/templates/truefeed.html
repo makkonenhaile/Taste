@@ -1,0 +1,52 @@
+{% extends 'feed.html' %}
+
+{% block content %}
+    {% for review in reviews %}
+        <article class = "in-article-card ">
+            <div class= "grid-container">
+                <img class="profile-pic child" src ="{{ url_for('static', filename='images/johnny3.webp') }}">
+                <p class="user-name child"><strong>{{ usernames[loop.index - 1] }}</strong></p>
+                <h3 class = "block-title child">
+                    <strong>{{ review['reviewText'] }}</strong> 
+                </h3>
+                <p class="tag pad-120">#{{ review['mediaType'] }}</p>
+                <p class="yuck-yum pad-120">
+                    {% if review['yum'] == 1%}
+                        <h3>Yum 👅</h3>
+                    {%else%}
+                        <h3>Yuck 🤮</h3>
+                    {% endif %}
+                </p>
+            </div>
+            <hr>
+            <p class = "opinion-para">{{ review['reviewText'] }}</p>
+            <time datetime = "{{ review['date'] }}" title ="Originally published Apr 8, 2013">
+                {{ review['date'] }}
+            </time>
+        </article>
+    {% endfor %}
+{% endblock %}
+
+
+<!--
+<article class = "in-article-card ">
+    <div class= "grid-container">
+        <img class="profile-pic child" src ="{{ url_for('static', filename='images/johnny3.webp') }}">
+        <p class="user-name child"><strong>@dante-fart</strong></p>
+        <h3 class = "block-title child">
+           <strong>Inception is a peice of shit movie. </strong> 
+        </h3>
+        <p class="tag pad-120">#movies</p>
+        <p class="yuck-yum pad-120">Yuck 🤮</p>
+    </div>
+    <hr>
+    <p class = "opinion-para"> 
+        "Inception" has been widely praised for its technical prowess and thought-provoking storyline, however, it may not be for everyone. Here is a potential negative review:
+        While the visual effects in "Inception" are certainly impressive, the film's convoluted and confusing storyline can leave audiences feeling bewildered and unsatisfied. The film's multiple layers of dream sequences and overlapping plotlines can be difficult to follow, causing some viewers to lose interest.
+    </p>
+    <time datetime = "2019-10-03" title ="Originally published Apr 8, 2013">
+        1:40pm, 02-10-2022
+    </time>
+</article>
+<br><br><br>
+-->
