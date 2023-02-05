@@ -1,20 +1,36 @@
 {% extends 'profile.html' %}
 
+{%block bio%}
+<div class = "in-line">
+    {% set bruh = images[0] %}
+    <img class="profile_pic " src ="{{ url_for('static', filename = bruh) }}" alt="Avatar">
+        <div>
+            <h2 class="username">@{{user}}</h2>    
+            <p class = "bio">This is the bio of {{user}}. I have so many opinions and thoughts on things and I want to share them with all of the users on Taste. This is such a fun and cool and intuitive website. It's exactly what I've been needing!</p>
+            <div class="buttons-container">
+                <button class="button-arounder">Follow</button>
+              </div>
+        </div>
+       
+</div>
+{%endblock%}
+
 {% block content %}
     {% for review in reviews %}
         <article class = "in-article-card ">
             <div class= "grid-container">
-                <img class="profile-pic child" src ="{{ url_for('static', filename='images/johnny3.webp') }}">
+                {% set bruh = images[loop.index - 1] %}
+                <img class="profile-pic child" src ="{{ url_for('static', filename = bruh) }}">
                 <p class="user-name child"><strong>{{ usernames[loop.index - 1] }}</strong></p>
                 <h3 class = "block-title child">
-                    <strong>{{ review['reviewText'] }}</strong> 
+                    <strong>{{ review['reviewTitle'] }}</strong> 
                 </h3>
                 <p class="tag pad-120">#{{ review['mediaType'] }}</p>
                 <p class="yuck-yum pad-120">
                     {% if review['yum'] == 1%}
-                        <h3>Yum 👅</h3>
+                        Yum 👅
                     {%else%}
-                        <h3>Yuck 🤮</h3>
+                        Yuck 🤮
                     {% endif %}
                 </p>
             </div>

@@ -17,6 +17,7 @@
             <img class= "logonav" src= "{{ url_for('static', filename='images/neoud taste.png') }}">
             <li><a href="{{url_for('trueprofile')}}">Profile</a></li>
             <li><a href="{{url_for('truefeed')}}">Feed</a></li>
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
           
         </ul>
     </nav>
@@ -31,6 +32,8 @@
     <img class="taste_picture" src="{{ url_for('static', filename='images/neoud taste.png') }}" alt="Taste Logo">
    
 
+    {% block bio %} {% endblock %}
+    <!--
     <div class = "in-line">
         <img class="profile_pic " src="{{ url_for('static', filename='images/johnny3.webp') }}" alt="Avatar">
             <div>
@@ -42,6 +45,7 @@
             </div>
            
     </div>
+    -->
 
 
     <div class = "all-blocks">

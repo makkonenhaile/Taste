@@ -1,5 +1,5 @@
 import sqlite3 as sl
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, session
 from flask_session import Session
 
 def get_db_connection():
@@ -9,9 +9,9 @@ def get_db_connection():
 
 app = Flask(__name__, template_folder = 'templates', static_folder = 'static')
 app.config['SECRET_KEY'] = 'secretkey123'
-# app.config["SESSION_PERMANENT"] = False
-# app.config["SESSION_TYPE"] = "filesystem"
-# Session(app)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 def db_create_user(un: str, pw: str) -> bool:
     conn = sl.connect("database.db")
@@ -54,6 +54,13 @@ def login():
         password = request.form['password']
         if db_check_creds(username, password) == True:
             # User is valid, proceed to their homepage or wherever they need to go
+            conn = sl.connect("database.db")
+            c = conn.cursor()
+            session["username"] = username
+            idColumn = c.execute("SELECT userID FROM users WHERE username = ?", (username,)).fetchone()
+            session["id"] = idColumn[0]
+            conn.close()
+            print(session["id"])
             return redirect('/truefeed')
         else:
             # User is not valid, show error message
@@ -69,15 +76,18 @@ def signup():
         username = request.form["username"]
         password = request.form['password']
         confirmedPassword = request.form['password_again']
-        v = (username, password)
+        v = (username, password, 'images/default.jpg')
         b = db_create_user(username,password)
         if b:
             if password == confirmedPassword:
-                stmnt1 = "INSERT INTO users (`username`, `password`) VALUES (?,?)"
+                stmnt1 = "INSERT INTO users (`username`, `password`, `image`) VALUES (?,?,?)"
                 c.execute(stmnt1, v)
                 conn.commit()
-                # session["username"] = username
-                # session["id"] = conn.execute("SELECT userID FROM users WHERE username = ", username)
+                session["username"] = username
+                idColumn = c.execute("SELECT userID FROM users WHERE username = ?", (username,)).fetchone()
+                session["id"] = idColumn[0]
+                conn.close()
+                print(session["id"])
                 return redirect('/truefeed')
             else:
                 return render_template('signup.html', error='Invalid credentials')
@@ -88,25 +98,41 @@ def signup():
 @app.route('/truefeed')
 def truefeed():
     conn = get_db_connection()
-    reviews = conn.execute('SELECT * FROM reviews WHERE userID != 1 ORDER BY reviewID DESC').fetchall()
+    reviews = conn.execute('SELECT * FROM reviews WHERE userID != ? ORDER BY reviewID DESC', (session["id"],)).fetchall()
     conn.row_factory = lambda cursor, row: row[0]
     usernames = conn.execute('''SELECT u.username
                             FROM users u, reviews r
                             Where u.userID = r.userID
-                            AND u.userID != 1
-                            ''').fetchall()
+                            AND u.username != ?
+                            ''', (session["username"],)).fetchall()
+    images = conn.execute('''SELECT u.image
+                            FROM users u, reviews r
+                            Where u.userID = r.userID
+                            AND u.username != ?
+                            ''', (session["username"],)).fetchall()
     conn.close()
-    return render_template('truefeed.html', reviews=reviews, usernames=usernames) 
+    return render_template('truefeed.html', reviews=reviews, usernames=usernames, user=session["username"], images=images) 
 
 @app.route('/trueprofile')
 def trueprofile():
     conn = get_db_connection()
-    reviews = conn.execute('SELECT * FROM reviews WHERE userID = 1 ORDER BY reviewID DESC').fetchall()
+    reviews = conn.execute('SELECT * FROM reviews WHERE userID = ? ORDER BY reviewID DESC', (session["id"],)).fetchall()
     conn.row_factory = lambda cursor, row: row[0]
     usernames = conn.execute('''SELECT u.username
                             FROM users u, reviews r
                             Where u.userID = r.userID
-                            AND u.userID = 1
-                            ''').fetchall()
+                            AND u.username = ?
+                            ''', (session["username"],)).fetchall()
+    images = conn.execute('''SELECT u.image
+                            FROM users u, reviews r
+                            Where u.userID = r.userID
+                            AND u.username = ?
+                            ''', (session["username"],)).fetchall()
     conn.close()
-    return render_template('trueprofile.html', reviews=reviews, usernames=usernames) 
+    return render_template('trueprofile.html', reviews=reviews, usernames=usernames, user=session["username"], images=images) 
+
+@app.route("/logout")
+def logout():
+    session["name"] = None
+    session["id"] = None
+    return redirect("/")
